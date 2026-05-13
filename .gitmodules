@@ -1,0 +1,4 @@
+[submodule "top-rated"]
+	path = top-rated
+	url = git@github.com:Choromanski/udisc-top-rated.git
+	branch = master
