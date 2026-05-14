@@ -10,11 +10,6 @@ fi
 git submodule init
 
 git submodule status | while read -r sha path extras; do
-    # Lines starting with '-' mean the submodule hasn't been cloned yet
-    if [[ "$sha" == -* ]]; then
-        echo "Cloning missing submodule: $path"
-        git submodule update --init "$path"
-    else
-        echo "Skipping (already exists): $path"
-    fi
+    echo "Updating submodule: $path"
+    git submodule update --init --remote "$path"
 done
